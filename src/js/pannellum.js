@@ -1800,6 +1800,7 @@ function renderHotSpot(hs) {
     if ((hs.yaw <= 90 && hs.yaw > -90 && z <= 0) ||
       ((hs.yaw > 90 || hs.yaw <= -90) && z <= 0)) {
         hs.div.style.visibility = 'hidden';
+        fireEvent('hotspotpositionchange', hs.sceneId, -1, -1, -1);
     } else {
         var yawSin = Math.sin((-hs.yaw + config.yaw) * Math.PI / 180),
             hfovTan = Math.tan(config.hfov * Math.PI / 360);
@@ -1825,6 +1826,7 @@ function renderHotSpot(hs) {
         hs.div.style.webkitTransform = transform;
         hs.div.style.MozTransform = transform;
         hs.div.style.transform = transform;
+        fireEvent('hotspotpositionchange', hs.sceneId, coord[0], coord[1], config.roll);
     }
 }
 
