@@ -53,3 +53,6 @@ Fired when a touch starts. Passes `TouchEvent` to handler.
 
 Fired when a touch ends. Passes `TouchEvent` to handler.
 
+## `hotspotpositionchange`
+
+Fired when hotSpot position changed. Passes `changed scene id`, `positon x`, `position y`, `rotate` to handler.
